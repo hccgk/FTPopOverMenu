@@ -36,6 +36,9 @@ typedef void (^FTPopOverMenuDismissBlock)();
 @property (nonatomic, assign)NSTextAlignment textAlignment;
 @property (nonatomic, assign)BOOL ignoreImageOriginalColor;// Default is 'NO', if sets to 'YES', images color will be same as textColor.
 @property (nonatomic, assign)BOOL allowRoundedArrow;// Default is 'NO', if sets to 'YES', the arrow will be drawn with round corner.
+@property (nonatomic, assign)BOOL denyArrow;// Default is 'NO', if sets to 'YES', the arrow will be drawn with round corner.
+@property (nonatomic, assign)BOOL allowseparter; //是否使用separter tableview 样式
+
 @property (nonatomic, assign)NSTimeInterval animationDuration;
 /**
  *  defaultConfiguration

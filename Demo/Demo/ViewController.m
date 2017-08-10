@@ -74,6 +74,49 @@
     
 }
 
+- (IBAction)NOThree:(id)sender {
+    
+    FTPopOverMenuConfiguration *configuration = [FTPopOverMenuConfiguration defaultConfiguration];
+    configuration.menuRowHeight = 40;
+    configuration.menuWidth = 60;
+    configuration.textColor = [UIColor whiteColor];
+    configuration.textFont = [UIFont systemFontOfSize:13];
+    configuration.tintColor = [UIColor blackColor];
+    configuration.borderColor = [UIColor colorWithRed:52.f/255.f green:56.f/255.f blue:67/255.f alpha:1];
+    configuration.borderWidth = 0.5;
+    configuration.denyArrow = YES;
+    configuration.textAlignment = NSTextAlignmentCenter;
+    configuration.allowRoundedArrow = NO;
+    configuration.allowseparter = NO;
+    NSArray *menuarr = @[@"3分",@"15分",@"2时",@"4时",@"6时",@"12时",@"周线"];
+    [FTPopOverMenu showForSender:sender withMenuArray:menuarr doneBlock:^(NSInteger selectedIndex) {
+        [sender setTitle:menuarr[selectedIndex] forState:UIControlStateNormal];
+        
+    } dismissBlock:^{
+        
+    }];
+}
 
+- (IBAction)haveseparate:(id)sender {
+    FTPopOverMenuConfiguration *configuration = [FTPopOverMenuConfiguration defaultConfiguration];
+    configuration.menuRowHeight = 40;
+    configuration.menuWidth = 60;
+    configuration.textColor = [UIColor whiteColor];
+    configuration.textFont = [UIFont systemFontOfSize:13];
+    configuration.tintColor = [UIColor blackColor];
+    configuration.borderColor = [UIColor colorWithRed:52.f/255.f green:56.f/255.f blue:67/255.f alpha:1];
+    configuration.borderWidth = 0.5;
+    configuration.denyArrow = NO; //可不传 默认还是箭头
+    configuration.textAlignment = NSTextAlignmentCenter;
+    configuration.allowRoundedArrow = YES;
+    configuration.allowseparter = YES;
+    NSArray *menuarr = @[@"3分",@"15分",@"2时",@"4时",@"6时",@"12时",@"周线"];
+    [FTPopOverMenu showForSender:sender withMenuArray:menuarr doneBlock:^(NSInteger selectedIndex) {
+        [sender setTitle:menuarr[selectedIndex] forState:UIControlStateNormal];
+        
+    } dismissBlock:^{
+        
+    }];
+}
 
 @end

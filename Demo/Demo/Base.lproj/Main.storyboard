@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E192b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VXD-8Z-qZ2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VXD-8Z-qZ2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -63,6 +64,23 @@
                                     <action selector="showMenuFromButton:" destination="779-PW-fkb" eventType="touchUpInside" id="DMW-Pw-TvE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gH1-zv-ChB">
+                                <rect key="frame" x="83" y="175" width="62" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="没有三角">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="NOThree:" destination="779-PW-fkb" eventType="touchUpInside" id="YtE-te-O9V"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iuw-cJ-Jgk">
+                                <rect key="frame" x="210" y="175" width="62" height="30"/>
+                                <state key="normal" title="有分割线"/>
+                                <connections>
+                                    <action selector="haveseparate:" destination="779-PW-fkb" eventType="touchUpInside" id="UKX-FL-saz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -73,11 +91,15 @@
                             <constraint firstItem="s7d-Sl-vH8" firstAttribute="top" secondItem="jhN-8f-vso" secondAttribute="bottom" constant="13" id="OWe-S4-n2D"/>
                             <constraint firstItem="s7d-Sl-vH8" firstAttribute="top" secondItem="q5m-Wi-9ns" secondAttribute="bottom" constant="13" id="WLU-eP-Fj4"/>
                             <constraint firstItem="2U5-mF-U46" firstAttribute="top" secondItem="Uhg-BK-0xA" secondAttribute="bottom" constant="8" id="Yt8-1M-CmB"/>
+                            <constraint firstItem="gH1-zv-ChB" firstAttribute="leading" secondItem="Mdm-9K-5uz" secondAttribute="leadingMargin" constant="67" id="ZEr-vc-JaA"/>
                             <constraint firstItem="s7d-Sl-vH8" firstAttribute="top" secondItem="Po3-o0-e4a" secondAttribute="bottom" constant="13" id="ZGV-IJ-Roi"/>
                             <constraint firstItem="jhN-8f-vso" firstAttribute="centerX" secondItem="Mdm-9K-5uz" secondAttribute="centerX" id="aMQ-Hu-Osd"/>
                             <constraint firstAttribute="trailing" secondItem="Po3-o0-e4a" secondAttribute="trailing" constant="20" id="aNx-uH-RJV"/>
+                            <constraint firstItem="Iuw-cJ-Jgk" firstAttribute="leading" secondItem="gH1-zv-ChB" secondAttribute="trailing" constant="65" id="cQK-CZ-fBZ"/>
                             <constraint firstItem="q5m-Wi-9ns" firstAttribute="leading" secondItem="Mdm-9K-5uz" secondAttribute="leading" constant="20" id="dan-yc-8sb"/>
                             <constraint firstItem="2U5-mF-U46" firstAttribute="leading" secondItem="Mdm-9K-5uz" secondAttribute="leading" constant="20" id="etV-9I-sxT"/>
+                            <constraint firstItem="Iuw-cJ-Jgk" firstAttribute="top" secondItem="Uhg-BK-0xA" secondAttribute="bottom" constant="111" id="jS0-UL-uOY"/>
+                            <constraint firstItem="gH1-zv-ChB" firstAttribute="top" secondItem="Uhg-BK-0xA" secondAttribute="bottom" constant="111" id="oYu-QV-dnV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="FTPopOverMenuDemo" id="ImE-bb-cea">
@@ -92,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ksh-iK-DS5" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1476.5" y="336.5"/>
+            <point key="canvasLocation" x="1476" y="335.98200899550227"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="7PI-50-VFB">
@@ -111,10 +133,10 @@
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SecondTableViewCellIdentifier" rowHeight="90" id="3UE-cy-5Q6" customClass="SecondTableViewCell">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3UE-cy-5Q6" id="KUl-Bt-ZHT">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YnW-x2-LM2">
